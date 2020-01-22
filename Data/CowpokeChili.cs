@@ -88,5 +88,35 @@ namespace CowboyCafe.Data
             }
         }
     }
+
+    public class RustlersRibs
+    {
+
+        public double Price
+        {
+            get
+            {
+                return 7.5;
+            }
+        }
+
+        public uint Calories
+        {
+            get
+            {
+                return 894;
+            }
+        }
+
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                return instructions;
+            }
+        }
+    }
 }
 
