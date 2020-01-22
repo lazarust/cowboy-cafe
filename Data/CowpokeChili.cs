@@ -89,9 +89,15 @@ namespace CowboyCafe.Data
         }
     }
 
+    /// <summary>
+    /// A class representing the Rustler's Ribs entree
+    /// </summary>
     public class RustlersRibs
     {
 
+        /// <summary>
+        /// The price of the ribs
+        /// </summary>
         public double Price
         {
             get
@@ -100,6 +106,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The calories of the ribs
+        /// </summary>
         public uint Calories
         {
             get
@@ -108,11 +117,78 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// The special instructions for the ribs
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
                 var instructions = new List<string>();
+
+                return instructions;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A class representing the Pecos Pulled Pork entree
+    /// </summary>
+    public class PecosPulledPork
+    {
+        /// <summary>
+        /// The price of the pork
+        /// </summary>
+        public double Price
+        {
+            get
+            {
+                return 5.88;
+            }
+        }
+
+        /// <summary>
+        /// The calories of the pork
+        /// </summary>
+        public uint Calories
+        {
+            get
+            {
+                return 528;
+            }
+        }
+
+        private bool Bread = true;
+        /// <summary>
+        /// If the pork has bread
+        /// </summary>
+        public bool Bread
+        {
+            get { return bread; }
+            set { bread = value; }
+        }
+
+        private bool Pickle = true;
+        /// <summary>
+        /// If the pork has pickles
+        /// </summary>
+        public bool Pickle
+        {
+            get { return pickle; }
+            set { pickle = value; }
+        }
+
+        /// <summary>
+        /// Any special instructions for the pork
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                if (!bread) instructions.Add("hold bread");
+                if (!pickle) instructions.Add("hold pickle");
 
                 return instructions;
             }
