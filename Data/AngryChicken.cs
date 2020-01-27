@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Angry Chicken entree
     /// </summary>
-    class AngryChicken
+    public class AngryChicken
     {
         /// <summary>
         /// The price of the chicken
@@ -47,7 +47,7 @@ namespace CowboyCafe.Data
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = true; }
+            set { pickle = value; }
         }
 
         /// <summary>
