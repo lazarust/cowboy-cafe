@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: Angry chicken entree
+ * Purpose: To handle the angry chicken entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
