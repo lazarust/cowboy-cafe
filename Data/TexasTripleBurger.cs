@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: TexasTripleBurger
+ * Purpose: Handle texas triple burger entre
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,29 +11,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger entree
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger: Entree
     {
         /// <summary>
         /// The price of the burger
         /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 6.45;
-            }
-        }
+        public override double Price { get { return 6.45; } }
 
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 698;
-            }
-        }
+        public override uint Calories { get { return 698; } }
 
         private bool bacon = true;
         /// <summary>
@@ -133,7 +126,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

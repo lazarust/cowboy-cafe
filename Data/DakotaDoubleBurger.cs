@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: DakotaDoubleBurger
+ * Purpose: Handle the dakota double burger entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,29 +11,18 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Dakota Double Burger entree
     /// </summary>
-    public class DakotaDoubleBurger
+    public class DakotaDoubleBurger: Entree
     {
         /// <summary>
         /// Thre price of the burger
         /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 5.2;
-            }
-        }
+        public override double Price { get { return 5.2; } }
 
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 464;
-            }
-        }
+        public override uint Calories { get { return 464; } }
+        
 
         private bool tomato = true;
         /// <summary>
@@ -113,7 +107,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special Instructions for the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

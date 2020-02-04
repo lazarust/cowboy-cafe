@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* 
+ * Author: Nathan Bean
+ * Edited By: Thomas Lazarus
+ * Class: Cowpoke Chilli
+ * Purpose: Handle the Cowpoke chilli entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili
+    public class CowpokeChili: Entree
     {
         private bool cheese = true;
         /// <summary>
@@ -51,29 +57,17 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the chili
         /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 6.10;
-            }
-        }
+        public override double Price { get { return 6.1; } }
 
         /// <summary>
         /// The calories of the chili
         /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 171;
-            }
-        }
+        public override uint Calories { get { return 171; } }
 
         /// <summary>
         /// Special instructions for the preparation of the chili
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
