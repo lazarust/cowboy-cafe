@@ -1,7 +1,7 @@
 ﻿/*
- * Author: Thomas Lazaurs
- * Class: ChiliCheeseFries
- * Prupose: Handle the chili cheese fies side
+ * Author: Thomas Lazarus
+ * Class: Pan De Campo side
+ * Purpose: Handle the pan de campo side
  */
 using System;
 using System.Collections.Generic;
@@ -10,12 +10,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Class to hand chili cheese fries side
+    /// Class to handle the pan de campo side
     /// </summary>
-    public class ChiliCheeseFries: Side
+    public class PanDeCampo: Side
     {
         /// <summary>
-        /// Calories for the side based off of size
+        /// Calories of the side
         /// </summary>
         public override uint Calories
         {
@@ -24,33 +24,32 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 367;
                     case Size.Medium:
-                        return 524;
+                        return 269;
                     case Size.Small:
-                        return 433;
+                        return 227;
                     default:
                         throw new NotImplementedException("Unknown size");
                 }
             }
         }
 
-
         /// <summary>
-        /// Price for the side based off of size
+        /// Price of the side
         /// </summary>
         public override double Price
         {
             get
             {
-                switch (Size)
+                switch(Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown size");
                 }

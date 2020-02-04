@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: PecosPulledPork Entree
+ * Purpose: To hand the pecos pulled pork entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
