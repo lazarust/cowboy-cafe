@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: RustlersRibs
+ * Purpose: Handle the rustlers ribs entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,35 +11,23 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs entree
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs : Entree
     {
 
         /// <summary>
         /// The price of the ribs
         /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 7.5;
-            }
-        }
+        public override double Price { get { return 7.5; } }
 
         /// <summary>
         /// The calories of the ribs
         /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 894;
-            }
-        }
+        public override uint Calories { get { return 894; } }
 
         /// <summary>
         /// The special instructions for the ribs
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
