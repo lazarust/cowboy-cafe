@@ -1,11 +1,22 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: CornDodger
+ * Purpose: Handle the corn dodger side
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Class to handle corn dodger side
+    /// </summary>
     public class CornDodgers: Side
     {
+        /// <summary>
+        /// Calories of the side
+        /// </summary>
         public override uint Calories
         {
             get
@@ -24,6 +35,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Price for the side
+        /// </summary>
         public override double Price
         {
             get
