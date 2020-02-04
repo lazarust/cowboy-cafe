@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: Trailburger
+ * Purpose: Handle the trailburger entree
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -6,29 +11,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trail Burger entree
     /// </summary>
-    public class TrailBurger
+    public class TrailBurger: Entree
     {
         /// <summary>
         /// The price of the burger
         /// </summary>
-        public double Price
-        {
-            get
-            {
-                return 4.5;
-            }
-        }
+        public override double Price { get { return 4.5; } }
 
         /// <summary>
         /// The calories of the burger
         /// </summary>
-        public uint Calories
-        {
-            get
-            {
-                return 288;
-            }
-        }
+        public override uint Calories { get { return 288; } }
 
         private bool ketchup = true;
         /// <summary>
@@ -83,7 +76,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
