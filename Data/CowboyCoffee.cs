@@ -96,5 +96,13 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public override string ToString()
+        {
+            string flavor = "";
+            if (decaf) flavor = " Decaf";
+
+            return Size + flavor +" Cowboy Coffee";
+        }
     }
 }

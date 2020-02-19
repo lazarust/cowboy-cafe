@@ -56,5 +56,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Overides the two string method for side
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Chili Cheese Fries";
+        }
     }
 }

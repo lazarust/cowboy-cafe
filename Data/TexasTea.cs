@@ -42,11 +42,23 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 36;
+                        if (sweet)
+                        {
+                            return 36;
+                        }
+                        return 18;
                     case Size.Medium:
-                        return 22;
+                        if (sweet)
+                        {
+                            return 22;
+                        }
+                        return 11;
                     case Size.Small:
-                        return 10;
+                        if (sweet)
+                        {
+                            return 10;
+                        }
+                        return 5;
                     default:
                         throw new NotImplementedException("Unknown size");
                 }
@@ -81,6 +93,20 @@ namespace CowboyCafe.Data
 
                 return instructions;
             }
+        }
+
+        public override string ToString()
+        {
+            string flavor;
+            if (Sweet)
+            {
+                flavor = "Plain";
+            } else
+            {
+                flavor = "Sweet";
+            }
+
+            return Size + " Texas " + flavor + " Tea";
         }
     }
 }

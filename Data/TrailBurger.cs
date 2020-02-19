@@ -91,5 +91,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Overrides the to string method for the entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

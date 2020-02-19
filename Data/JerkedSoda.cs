@@ -75,5 +75,34 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Override of the to string for the jerked soda.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            string flavor = "";
+            switch(Flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    flavor = " Cream Soda";
+                    break;
+                case SodaFlavor.BirchBeer:
+                    flavor = " Birch Beer";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    flavor = " Orange Soda";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    flavor = " Sarsparilla";
+                    break;
+                case SodaFlavor.RootBeer:
+                    flavor = " Root Beer";
+                    break;
+            }       
+
+            return Size +  flavor + " Jerked Soda";
+        }
     }
 }

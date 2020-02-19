@@ -58,5 +58,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Override to string method for the pulled pokr entree
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Pecos Pulled Pork";
+        }
     }
 }

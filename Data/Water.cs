@@ -35,5 +35,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Override for the to string method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Size + " Water";
+        }
     }
 }
