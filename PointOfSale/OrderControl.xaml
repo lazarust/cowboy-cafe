@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="75"/>
@@ -20,13 +20,37 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <Button Name="AddCowpokeChilliButton">Cowpoke Chili</Button>
+            <Button Name="AddResultersRibsButton">Rustler's Ribs</Button>
+            <Button Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailButton">Trail Burger</Button>
+            <Button Name="AddDakotaDoubleButton">Dakota Double Burger</Button>
+            <Button Name="AddTexasTripleButton">Texas Triple Burger</Button>
             <Button Name="AddAngryChickenButton">AngryChicken</Button>
-            <Button>Cowpoke Chili</Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
-            <Button>Baked Beans</Button>
+            <Button Name="AddChiliCheeseButton">Chili Cheese Fies</Button>
+            <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
+            <Button Name="AddBakedBeansButton">Baked Beans</Button>
         </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
+            <Button Name="AddTexasTeaButton">Texas Tea</Button>
+            <Button Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
+            <Button Name="AddWaterButton">Water</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center">Order</TextBlock>
+            <ListView Name="OrderList" HorizontalAlignment="Left" VerticalAlignment="Top">
+                
+            </ListView>
+        </StackPanel>
+           
     </Grid>
 </UserControl>
