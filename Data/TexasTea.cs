@@ -98,7 +98,7 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             string flavor;
-            if (Sweet)
+            if (!Sweet)
             {
                 flavor = "Plain";
             } else
