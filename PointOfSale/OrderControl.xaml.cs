@@ -29,7 +29,7 @@ namespace PointOfSale
             OrderList.Items.Add(new CowpokeChili());
         }
 
-        private void AddResultersRibsButton_Click(object sender, RoutedEventArgs e)
+        private void AddRusltersRibsButton_Click(object sender, RoutedEventArgs e)
         {
             OrderList.Items.Add(new RustlersRibs());
         }

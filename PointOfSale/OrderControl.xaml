@@ -21,7 +21,7 @@
         <StackPanel>
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <Button Name="AddCowpokeChilliButton" Click="AddCowpokeChilliButton_Click">Cowpoke Chili</Button>
-            <Button Name="AddResultersRibsButton" Click="AddResultersRibsButton_Click">Rustler's Ribs</Button>
+            <Button Name="AddResultersRibsButton" Click="AddRusltersRibsButton_Click">Rustler's Ribs</Button>
             <Button Name="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
             <Button Name="AddTrailButton" Click="AddTrailButton_Click">Trail Burger</Button>
             <Button Name="AddDakotaDoubleButton" Click="AddDakotaDoubleButton_Click">Dakota Double Burger</Button>
