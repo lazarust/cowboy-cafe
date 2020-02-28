@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: OrderTests
+ * Purpose: To test the order class
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -36,7 +41,6 @@ namespace CowboyCafe.DataTests
             order.Remove(item);
 
             Assert.DoesNotContain(item, order.Items);
-
         }
 
         [Fact]
@@ -99,5 +103,19 @@ namespace CowboyCafe.DataTests
             Assert.PropertyChanged(order, propName, () => { order.Remove(item); });
 
         }
+
+        [Fact]
+        public void AutoIncrimentingOrderNumber()
+        {
+            var order1 = new Order();
+            Assert.Equal((uint)1, order1.OrderNumber);
+
+            var order2 = new Order();
+            Assert.Equal((uint)2, order2.OrderNumber);
+
+            var order3 = new Order();
+            Assert.Equal((uint)3, order3.OrderNumber);
+        }
+
     }
 }

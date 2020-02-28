@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="PointOfSale.MenuItemSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="500">
+    
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="75"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock TextAlignment="Center">Entrees</TextBlock>
+            <Button Name="AddCowpokeChilliButton" Click="AddCowpokeChilliButton_Click">Cowpoke Chili</Button>
+            <Button Name="AddResultersRibsButton" Click="AddRusltersRibsButton_Click">Rustler's Ribs</Button>
+            <Button Name="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Click">Pecos Pulled Pork</Button>
+            <Button Name="AddTrailButton" Click="AddTrailButton_Click">Trail Burger</Button>
+            <Button Name="AddDakotaDoubleButton" Click="AddDakotaDoubleButton_Click">Dakota Double Burger</Button>
+            <Button Name="AddTexasTripleButton" Click="AddTexasTripleButton_Click">Texas Triple Burger</Button>
+            <Button Name="AddAngryChickenButton" Click="AddAngryChickenButton_Click">AngryChicken</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center">Sides</TextBlock>
+            <Button Name="AddChiliCheeseButton" Click="AddChiliCheeseButton_Click">Chili Cheese Fies</Button>
+            <Button Name="AddCornDodgersButton" Click="AddCornDodgersButton_Click">Corn Dodgers</Button>
+            <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Click">Pan de Campo</Button>
+            <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Click">Baked Beans</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Drinks</TextBlock>
+            <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Click">Jerked Soda</Button>
+            <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Click">Texas Tea</Button>
+            <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Click">Cowboy Coffee</Button>
+            <Button Name="AddWaterButton" Click="AddWaterButton_Click">Water</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

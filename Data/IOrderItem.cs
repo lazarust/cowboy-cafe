@@ -6,8 +6,8 @@ namespace CowboyCafe.Data
 {
     public interface IOrderItem
     {
-        double Price { get; }
+        public double Price { get; }
 
-        List<string> SpecialInstructions { get; }
+        public virtual IEnumerable<string> SpecialInstructions { get { return SpecialInstructions; } }
     }
 }

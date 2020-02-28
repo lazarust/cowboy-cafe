@@ -56,6 +56,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public override List<string> SpecialInstructions { get; }
+
         /// <summary>
         /// Overrides the to string method for the side
         /// </summary>
