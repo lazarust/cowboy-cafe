@@ -33,7 +33,13 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Orientation="Vertical">
                             <TextBlock Text="{Binding}" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Path=SpecialInstructions}"/>
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                         </StackPanel>
                         <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
                     </Grid>
