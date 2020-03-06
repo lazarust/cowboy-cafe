@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.CowboyCoffeeCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="75"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Cowboy Coffee Customization"/>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock Text="Size:" />
+            <Button Name="CoffeeSmall" Click="CoffeeSmall_Click">Small</Button>
+            <Button  Name="CoffeeMed" Click="CoffeeMed_Click">Medium</Button>
+            <Button Name="CoffeeLarge" Click="CoffeeLarge_Click">Large</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ice" />
+                <CheckBox IsChecked="{Binding Path=Ice}"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Room For Cream: "/>
+                <CheckBox IsChecked="{Binding Path=RoomForCream}"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Decaf: "/>
+                <CheckBox IsChecked="{Binding Path=Decaf}"></CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

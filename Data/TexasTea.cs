@@ -6,11 +6,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTea: Drink
+    public class TexasTea: Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler to handle when a property changes
+        /// </summary>
+        public new event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Price of the drink
         /// </summary>
@@ -70,7 +76,11 @@ namespace CowboyCafe.Data
         public bool Sweet
         {
             get { return sweet; }
-            set { sweet = value; }
+            set { 
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool lemon = false;
@@ -78,7 +88,11 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set { 
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         public override List<string> SpecialInstructions

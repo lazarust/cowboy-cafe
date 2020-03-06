@@ -6,14 +6,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// Jerked soda drink class
     /// </summary>
-    public class JerkedSoda: Drink
+    public class JerkedSoda: Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler to handle when a property changes
+        /// </summary>
+        public new event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Price of the drink
         /// </summary>
@@ -56,10 +62,19 @@ namespace CowboyCafe.Data
             }
         }
 
+
+        private SodaFlavor flavor;
         /// <summary>
         /// Flavor of the drink
         /// </summary>
-        public SodaFlavor Flavor;
+        public SodaFlavor Flavor {
+            get { return flavor; }
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
         /// <summary>
         /// Special Instructions for the drink

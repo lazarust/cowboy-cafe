@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.CowpokeChiliCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.TrailBurgerCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,24 +11,28 @@
             <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Cowpoke Chili Customization"/>
+        <TextBlock Text="Dakota Double Burger Customization"/>
         <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ketchup:  "/>
+                <CheckBox IsChecked="{Binding Path=Ketchup}"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Mustard:  "/>
+                <CheckBox IsChecked="{Binding Path=Mustard}"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Pickle:  "/>
+                <CheckBox IsChecked="{Binding Path=Pickle}"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Bun:  "/>
+                <CheckBox IsChecked="{Binding Path=Bun}"></CheckBox>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Cheese:  "/>
                 <CheckBox IsChecked="{Binding Path=Cheese}"></CheckBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Sour Cream:  "/>
-                <CheckBox IsChecked="{Binding Path=SourCream}"></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Green Onions:  "/>
-                <CheckBox IsChecked="{Binding Path=GreenOnions}"></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Tortilla Strips:  "/>
-                <CheckBox IsChecked="{Binding Path=TortillaStrips}"></CheckBox>
-            </StackPanel>
-        </StackPanel>       
+        </StackPanel>
     </Grid>
 </UserControl>

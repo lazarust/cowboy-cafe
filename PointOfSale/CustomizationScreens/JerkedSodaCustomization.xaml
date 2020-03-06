@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="75"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Jerked Soda Customization"/>
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock Text="Size:" />
+            <Button Name="SodaSmall" Click="SodaSmall_Click">Small</Button>
+            <Button  Name="SodaMed" Click="SodaMed_Click">Medium</Button>
+            <Button Name="SodaLarge" Click="SodaLarge_Click">Large</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="Flavor: "/>
+            <Button Name="CreamSoda" Click="CreamSoda_Click">Cream Soda</Button>
+            <Button Name="BirchBeer" Click="BirchBeer_Click">Birch Beer</Button>
+            <Button Name="OrangeSoda" Click="OrangeSoda_Click">Orange Soda</Button>
+            <Button Name="Sarsparilla" Click="Sarsparilla_Click">Sarsparilla</Button>
+            <Button Name="RootBeer" Click="RootBeer_Click">Root Beer</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
