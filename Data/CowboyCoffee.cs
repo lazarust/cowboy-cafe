@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Event handler to handle when a property changes
         /// </summary>
-        public new event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Price of the drink
@@ -55,6 +55,23 @@ namespace CowboyCafe.Data
                     default:
                         throw new NotImplementedException("Unknown size");
                 }
+            }
+        }
+
+
+        private Size size = Size.Small;
+        /// <summary>
+        /// Handles the size of the drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
 

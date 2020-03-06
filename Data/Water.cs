@@ -21,8 +21,41 @@ namespace CowboyCafe.Data
 
         public override uint Calories { get { return 0; } }
 
-        private bool lemon = false;
+        private Size size = Size.Small;
+        /// <summary>
+        /// Handles the size of the drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
 
+        private bool ice = true;
+        /// <summary>
+        /// Ice for the drink
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool lemon = false;
+        /// <summary>
+        /// Lemon for the drink
+        /// </summary>
         public bool Lemon
         {
             get { return lemon; }

@@ -36,5 +36,9 @@
             <Button Name="Sarsparilla" Click="Sarsparilla_Click">Sarsparilla</Button>
             <Button Name="RootBeer" Click="RootBeer_Click">Root Beer</Button>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1">
+            <TextBlock Text="Ice:  "/>
+            <CheckBox IsChecked="{Binding Path=Ice}"></CheckBox>
+        </StackPanel>
     </Grid>
 </UserControl>

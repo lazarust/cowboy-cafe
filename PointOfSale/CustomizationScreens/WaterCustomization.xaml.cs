@@ -31,12 +31,12 @@ namespace PointOfSale.CustomizationScreens
 
         private void WaterLarge_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Water w) w.Size = CowboyCafe.Data.Size.Medium;
+            if (DataContext is Water w) w.Size = CowboyCafe.Data.Size.Large;
         }
 
         private void WaterMed_Click(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Water w) w.Size = CowboyCafe.Data.Size.Large;
+            if (DataContext is Water w) w.Size = CowboyCafe.Data.Size.Medium;
         }
     }
 }

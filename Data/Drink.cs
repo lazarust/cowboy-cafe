@@ -6,17 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink: IOrderItem, INotifyPropertyChanged
+    public abstract class Drink: IOrderItem
     {
-        /// <summary>
-        /// Event handler to handle when a property changes
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// Price of the drink
         /// </summary>
@@ -35,12 +29,7 @@ namespace CowboyCafe.Data
         public virtual Size Size
         {
             get { return size; }
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-            }
+            set { size = value; }
         }
 
         /// <summary>
@@ -55,10 +44,7 @@ namespace CowboyCafe.Data
         public virtual bool Ice
         {
             get { return ice; }
-            set { 
-                ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
-            }
+            set { ice = value; }
         }
     }
 }

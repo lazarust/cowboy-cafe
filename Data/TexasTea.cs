@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Event handler to handle when a property changes
         /// </summary>
-        public new event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Price of the drink
@@ -71,8 +71,41 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool sweet = true;
+        private Size size = Size.Small;
+        /// <summary>
+        /// Handles the size of the drink
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
 
+        private bool ice = true;
+        /// <summary>
+        /// Ice for the drink
+        /// </summary>
+        public override bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool sweet = true;
+        /// <summary>
+        /// If the drink is sweet
+        /// </summary>
         public bool Sweet
         {
             get { return sweet; }
@@ -84,7 +117,9 @@ namespace CowboyCafe.Data
         }
 
         private bool lemon = false;
-
+        /// <summary>
+        /// If the drink has lemon
+        /// </summary>
         public bool Lemon
         {
             get { return lemon; }
