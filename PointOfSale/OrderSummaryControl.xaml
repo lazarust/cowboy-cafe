@@ -23,11 +23,12 @@
             <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
         </StackPanel>
 
-        <ListBox ItemsSource="{Binding Path=Items}">
+        <ListBox ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
@@ -42,6 +43,9 @@
                             </ListBox>
                         </StackPanel>
                         <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
+                        <Button Name="DeleteBtn" Click="DeleteBtn_Click" Grid.Column="2">
+                            X
+                        </Button>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

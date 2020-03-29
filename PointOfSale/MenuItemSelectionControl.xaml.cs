@@ -43,7 +43,6 @@ namespace PointOfSale
             var orderControl = this.FindAncestor<OrderControl>();
             if (DataContext is Order order) { 
                 order.Add(new RustlersRibs());
-                orderControl.SwapScreen(new CowpokeChiliCustomization());
             }
         }
 

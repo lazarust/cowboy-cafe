@@ -57,7 +57,7 @@ namespace CowboyCafe.Data
             get { return greenOnions; }
             set { 
                 greenOnions = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnionis"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
