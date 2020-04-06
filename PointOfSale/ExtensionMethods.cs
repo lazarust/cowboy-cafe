@@ -16,6 +16,6 @@ namespace PointOfSale.ExtensionMethods
             if (parent is T) return parent as T;
 
             return parent.FindAncestor<T>();
-        } 
+        }
     }
 }

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="PointOfSale.CashPaymentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Bottom">
+            <local:BillControl denom="One" quant="0" x:Name="One"/>
+            <local:BillControl denom="Two" quant="0" x:Name="Two"/>
+            <local:BillControl denom="Five" quant="0" x:Name="Five"/>
+            <local:BillControl denom="Ten" quant="0" x:Name="Ten"/>
+            <local:BillControl denom="Twenty" quant="0" x:Name="Twenty"/>
+            <local:BillControl denom="Fifty" quant="0" x:Name="Fifty"/>
+            <local:BillControl denom="Hundred" quant="0" x:Name="Hundred"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+            <local:CoinControl denom="Penny" quant="0" x:Name="Penny"/>
+            <local:CoinControl denom="Dime" quant="0" x:Name="Dime"/>
+            <local:CoinControl denom="Nickel" quant="0" x:Name="Nickel"/>
+            <local:CoinControl denom="Quarter" quant="0" x:Name="Quarter"/>
+            <local:CoinControl denom="HalfDollar" quant="0" x:Name="HalfDollar"/>
+            <local:CoinControl denom="Dollar" quant="0" x:Name="Dollar"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBlock Text="Total Inputted: "  Height="20"/>
+            <TextBlock Name="Total" Height="20"/>
+        </StackPanel>
+        <Button Name="CompleteOrder" Width="100" Height="100" VerticalAlignment="Top" Click="CompleteOrder_Click">Complete Order</Button>
+    </Grid>
+</UserControl>

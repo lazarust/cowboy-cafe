@@ -24,6 +24,8 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public TransactionControl screen = new TransactionControl();
+
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
@@ -31,7 +33,11 @@ namespace PointOfSale
 
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            screen.DataContext = this.DataContext;
+            this.CompleteOrder.IsEnabled = false;
+            this.CancelOrder.IsEnabled = false;
+            this.ItemSelection.IsEnabled = false;
+            SwapScreen(screen);
         }
 
         public void SwapScreen(FrameworkElement element)

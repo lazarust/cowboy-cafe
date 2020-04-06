@@ -50,6 +50,14 @@ namespace CowboyCafe.Data
             }
         }
 
+        public double Total
+        {
+            get
+            {
+                return Subtotal + (Subtotal * .16);
+            }
+        }
+
         /// <summary>
         /// Current orders number
         /// </summary>
