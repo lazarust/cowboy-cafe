@@ -1,4 +1,8 @@
-﻿using PointOfSale.ExtensionMethods;
+﻿/*
+ * Author: Thomas Lazarus
+ * Class: CashPaymentControl
+ */
+using PointOfSale.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,6 +33,11 @@ namespace PointOfSale
 
         private double TTotal;
 
+        /// <summary>
+        /// Complete Order Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             Button_Click(sender, e);
@@ -55,6 +64,11 @@ namespace PointOfSale
             orderControl?.SwapScreen(new MenuItemSelectionControl());
         }
 
+        /// <summary>
+        /// Button Click event for adding and subtracting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             var one = One.quant;

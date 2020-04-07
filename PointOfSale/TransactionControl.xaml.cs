@@ -56,13 +56,16 @@ namespace PointOfSale
         {
             var cardTerminal = new CardTerminal();
 
-            cardTerminal.ProcessTransaction((this.DataContext as Order).Total);
-            PrintReciept("Card", (this.DataContext as Order).Total, 0);
-            var orderControl = this.FindAncestor<OrderControl>();
-            orderControl.CompleteOrder.IsEnabled = true;
-            orderControl.ItemSelection.IsEnabled = true;
-            orderControl.CancelOrder.IsEnabled = true;
-            orderControl?.SwapScreen(new MenuItemSelectionControl());
+            var status = cardTerminal.ProcessTransaction((this.DataContext as Order).Total);
+            if (status == ResultCode.Success)
+            {
+                PrintReciept("Card", (this.DataContext as Order).Total, 0);
+                var orderControl = this.FindAncestor<OrderControl>();
+                orderControl.CompleteOrder.IsEnabled = true;
+                orderControl.ItemSelection.IsEnabled = true;
+                orderControl.CancelOrder.IsEnabled = true;
+                orderControl?.SwapScreen(new MenuItemSelectionControl());
+            }            
         }
         
         /// <summary>
