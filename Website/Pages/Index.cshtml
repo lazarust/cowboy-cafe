@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@using CowboyCafe.Data
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+    <div class="text-center row">
+        <h1 class="display-4">Welcome To The Cowboy Cafe!</h1>
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+            You’ve had a hard ride - so take it easy with us.
+        </p>
+
+        <div class="col">
+            <h2>All Entrees</h2>
+            @foreach (CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
+            {
+                <div class="menu-item" style="border: solid">
+                    <p>@entree<br/></p>
+                    <p>Price: @string.Format("{0:C}", entree.Price)<br/></p>
+                    <p>Calories: @entree.Calories<br/></p>
+                </div>
+            }
+        </div>
+        
+        <div class="col">
+            <h2>All Sides</h2>
+            @foreach (CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
+            {               
+                <div class="menu-item" style="border: solid">
+                    <p>@side<br/></p>
+                    <p>Price: @string.Format("{0:C}", side.Price)<br/></p>
+                    <p>Calories: @side.Calories<br/></p>
+                </div>                
+            }
+        </div>
+        
+        
+
+        <div class="col">
+            <h2>All Drinks</h2>
+            @foreach (CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
+            {
+                <div class="menu-item" style="border: solid">
+                    <p>@drink<br/></p>
+                    <p>Price: @string.Format("{0:C}", drink.Price)<br/></p>
+                    <p>Calories: @drink.Calories<br/></p>
+                </div>
+            }            
+        </div>
+
+    </div>
