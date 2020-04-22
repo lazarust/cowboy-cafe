@@ -15,27 +15,77 @@
             You’ve had a hard ride - so take it easy with us.
         </p>
 
+        <form id="search-form">
+            
+            <div id="search">
+                <h4>Search</h4>
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+                <input type="submit" name="Search"/>
+            </div>
+
+            <div id="filter">
+
+                <label>
+                    <input type="checkbox" name="ItemTypes" value="Entree" checked="@Model.ItemTypes.Contains("Entree")" />
+                    Entree
+                </label>
+
+                <label>
+                    <input type="checkbox" name="ItemTypes" value="Side" checked="@Model.ItemTypes.Contains("Side")" />
+                    Side
+                </label>
+
+                <label>
+                    <input type="checkbox" name="ItemTypes" value="Drink" checked="@Model.ItemTypes.Contains("Drink")" />
+                    Drink
+                </label>
+
+                <h4>Calories</h4>
+                <div>
+                    Between
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="10" placeholder="min" />
+                    and
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="10" placeholder="max" />
+                </div>
+
+                <h4>Price</h4>
+                <div>
+                    Between
+                    <input name="PriceMin" type="number" min="0" max="20" step=".01" placeholder="min" />
+                    and
+                    <input name="PriceMax" type="number" min="0" max="20" step=".01" placeholder="max" />
+                </div>
+            </div>
+        </form>
+        
         <div class="col">
             <h2>All Entrees</h2>
-            @foreach (CowboyCafe.Data.Entree entree in CowboyCafe.Data.Menu.Entrees())
+            @if (@Model.EntreeItems != null)
             {
-                <div class="menu-item" style="border: solid">
-                    <p>@entree<br/></p>
-                    <p>Price: @string.Format("{0:C}", entree.Price)<br/></p>
-                    <p>Calories: @entree.Calories<br/></p>
-                </div>
+                @foreach (Entree entree in @Model.EntreeItems)
+                {
+                    <div class="menu-item" style="border: solid">
+                        <p>@entree<br /></p>
+                        <p>Price: @string.Format("{0:C}", entree.Price)<br /></p>
+                        <p>Calories: @entree.Calories<br /></p>
+                    </div>
+                }
             }
+
         </div>
         
         <div class="col">
             <h2>All Sides</h2>
-            @foreach (CowboyCafe.Data.Side side in CowboyCafe.Data.Menu.Sides())
-            {               
-                <div class="menu-item" style="border: solid">
-                    <p>@side<br/></p>
-                    <p>Price: @string.Format("{0:C}", side.Price)<br/></p>
-                    <p>Calories: @side.Calories<br/></p>
-                </div>                
+            @if (Model.SideItems != null)
+            {
+                @foreach (Side side in @Model.SideItems)
+                {
+                    <div class="menu-item" style="border: solid">
+                        <p>@side<br /></p>
+                        <p>Price: @string.Format("{0:C}", side.Price)<br /></p>
+                        <p>Calories: @side.Calories<br /></p>
+                    </div>
+                }
             }
         </div>
         
@@ -43,14 +93,17 @@
 
         <div class="col">
             <h2>All Drinks</h2>
-            @foreach (CowboyCafe.Data.Drink drink in CowboyCafe.Data.Menu.Drinks())
+            @if (Model.DrinkItems != null)
             {
-                <div class="menu-item" style="border: solid">
-                    <p>@drink<br/></p>
-                    <p>Price: @string.Format("{0:C}", drink.Price)<br/></p>
-                    <p>Calories: @drink.Calories<br/></p>
-                </div>
-            }            
-        </div>
+                @foreach (Drink drink in @Model.DrinkItems)
+                {
+                    <div class="menu-item" style="border: solid">
+                        <p>@drink<br /></p>
+                        <p>Price: @string.Format("{0:C}", drink.Price)<br /></p>
+                        <p>Calories: @drink.Calories<br /></p>
+                    </div>
+                }
+            }
 
+        </div>
     </div>

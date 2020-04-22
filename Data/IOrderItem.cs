@@ -8,6 +8,8 @@ namespace CowboyCafe.Data
     {
         public double Price { get; }
 
+        public uint Calories { get; }
+
         public virtual IEnumerable<string> SpecialInstructions { get { return SpecialInstructions; } }
     }
 }

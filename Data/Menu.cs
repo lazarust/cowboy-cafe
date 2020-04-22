@@ -4,6 +4,7 @@
  * Prurpose: Help convert the backend C# to the front-end web app
  */
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CowboyCafe.Data
 {
@@ -142,5 +143,172 @@ namespace CowboyCafe.Data
             return drinks;
         }
 
+        /// <summary>
+        /// Search method for each of the item types
+        /// </summary>
+        /// <param name="items">IEnumerable of the items</param>
+        /// <param name="searchTerm">Search term</param>
+        /// <param name="itemType">Type of item currently being searched</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> Search (IEnumerable<IOrderItem> items, string searchTerm, string itemType)
+        {
+            if (searchTerm == null || searchTerm == "")
+            {
+                if (itemType == "Drink")
+                {
+                    return Drinks();
+                } 
+                else if (itemType == "Entree")
+                {
+                    return Entrees();
+                }
+                else
+                {
+                    return Sides();
+                }
+            }
+
+            List<IOrderItem> results = new List<IOrderItem>();
+       
+            foreach (var item in items)
+            {
+                if (item.ToString().Contains(searchTerm, System.StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// ItemTypes as a string[]
+        /// </summary>
+        public static string[] ItemTypes
+        {
+            get => new string[]
+            {
+                "Entree",
+                "Drink",
+                "Side"
+            };
+        }
+
+        /// <summary>
+        /// Sets the given IEnumerable to null if it is not selected
+        /// </summary>
+        /// <param name="items">IEnumerable of given items</param>
+        /// <param name="categories">IEnumberable of strings representing the selected categories</param>
+        /// <param name="itemType">The current item type</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories, string itemType)
+        {
+            if (categories == null || categories.Count() == 0) return items;
+
+            if (categories.Contains("Entree") & itemType == "Entree")
+            {
+                return items;
+            }
+
+            if (categories.Contains("Drink") & itemType == "Drink")
+            {
+                return items;
+            }
+
+            if (categories.Contains("Side") & itemType == "Side")
+            {
+                return items;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Filter the given IEnumerable as calories
+        /// </summary>
+        /// <param name="items">IEnumerable of items</param>
+        /// <param name="min">Minimum calories</param>
+        /// <param name="max">Maximum calories</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByCalories (IEnumerable<IOrderItem> items, int? min, int? max)
+        {
+            if (min == null & max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Calories <= max) results.Add(item);
+                }
+
+                return results;
+            }
+
+            if (max == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+
+                return results;
+            }
+
+            foreach (IOrderItem item in items)
+            {
+                if (item.Calories >= min & item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filter the given IEnumerable by Price
+        /// </summary>
+        /// <param name="items">IEnumerable of items</param>
+        /// <param name="min">Minimum Price</param>
+        /// <param name="max">Maximum Price</param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null & max == null) return items;
+
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max) results.Add(item);
+                }
+
+                return results;
+            }
+
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+
+                return results;
+            }
+
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min & item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
     }
 }
