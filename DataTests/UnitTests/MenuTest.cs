@@ -4,10 +4,8 @@
  * Purpose: Test the menu class
  */
 using CowboyCafe.Data;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace CowboyCafe.DataTests
@@ -20,18 +18,15 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuEntrees()
         {
-            List<IOrderItem> test = new List<IOrderItem>
-            {
-                new AngryChicken(),
-                new CowpokeChili(),
-                new DakotaDoubleBurger(),
-                new PecosPulledPork(),
-                new RustlersRibs(),
-                new TexasTripleBurger(),
-                new TrailBurger()
-            };
-
-            Assert.Equal(test.Count(), (Menu.Entrees()).Count());
+            Assert.Collection(Menu.Entrees(),
+                (ac) => { Assert.IsType<AngryChicken>(ac); },
+                (cc) => { Assert.IsType<CowpokeChili>(cc); },
+                (ddb) => { Assert.IsType<DakotaDoubleBurger>(ddb); },
+                (ppp) => { Assert.IsType<PecosPulledPork>(ppp); },
+                (rr) => { Assert.IsType<RustlersRibs>(rr); },
+                (ttb) => { Assert.IsType<TexasTripleBurger>(ttb); },
+                (tb) => { Assert.IsType<TrailBurger>(tb); }
+                );
         }
 
         /// <summary>
@@ -40,42 +35,20 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuSide()
         {
-            List<IOrderItem> sides = new List<IOrderItem>();
-
-            sides.Add(new BakedBeans());
-            var mBakedBeans = new BakedBeans();
-            mBakedBeans.Size = Size.Medium;
-            sides.Add(mBakedBeans);
-            var lBakedBeans = new BakedBeans();
-            lBakedBeans.Size = Size.Large;
-            sides.Add(lBakedBeans);
-
-
-            sides.Add(new ChiliCheeseFries());
-            var mChilliCheeseFies = new ChiliCheeseFries();
-            mChilliCheeseFies.Size = Size.Medium;
-            sides.Add(mChilliCheeseFies);
-            var lChilliCheeseFries = new ChiliCheeseFries();
-            lChilliCheeseFries.Size = Size.Large;
-            sides.Add(lChilliCheeseFries);
-
-            sides.Add(new CornDodgers());
-            var mCorn = new CornDodgers();
-            mCorn.Size = Size.Medium;
-            sides.Add(mCorn);
-            var lCorn = new CornDodgers();
-            lCorn.Size = Size.Large;
-            sides.Add(lCorn);
-
-            sides.Add(new PanDeCampo());
-            var mPan = new PanDeCampo();
-            mPan.Size = Size.Medium;
-            sides.Add(mPan);
-            var lPan = new PanDeCampo();
-            lPan.Size = Size.Large;
-            sides.Add(lPan);
-
-            Assert.Equal(sides.Count(), Menu.Sides().Count());
+            Assert.Collection(Menu.Sides(),
+                (bb) => { Assert.IsType<BakedBeans>(bb); },
+                (mbb) => { Assert.IsType<BakedBeans>(mbb); },
+                (lbb) => { Assert.IsType<BakedBeans>(lbb); },
+                (ccf) => { Assert.IsType<ChiliCheeseFries>(ccf);},
+                (mccf) => { Assert.IsType<ChiliCheeseFries>(mccf); },
+                (lccf) => { Assert.IsType<ChiliCheeseFries>(lccf); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); }
+                );
         }
 
         /// <summary>
@@ -84,41 +57,20 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuDrinks()
         {
-            List<IOrderItem> drinks = new List<IOrderItem>();
-
-            drinks.Add(new CowboyCoffee());
-            var mCoffee = new CowboyCoffee();
-            mCoffee.Size = Size.Medium;
-            drinks.Add(mCoffee);
-            var lCoffee = new CowboyCoffee();
-            drinks.Add(lCoffee);
-
-            drinks.Add(new JerkedSoda());
-            var mSoda = new JerkedSoda();
-            mSoda.Size = Size.Medium;
-            drinks.Add(mSoda);
-            var lSoda = new JerkedSoda();
-            lSoda.Size = Size.Large;
-            drinks.Add(lSoda);
-
-            drinks.Add(new TexasTea());
-            var mTea = new TexasTea();
-            mTea.Size = Size.Medium;
-            drinks.Add(mTea);
-            var lTea = new TexasTea();
-            lTea.Size = Size.Large;
-            drinks.Add(lTea);
-
-            drinks.Add(new Water());
-            var mWater = new Water();
-            mWater.Size = Size.Medium;
-            drinks.Add(mWater);
-            var lWater = new Water();
-            lWater.Size = Size.Large;
-            drinks.Add(lWater);
-
-            Assert.Equal(drinks.Count(), Menu.Drinks().Count());
-
+            Assert.Collection(Menu.Drinks(),
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (w) => { Assert.IsType<Water>(w); },
+                (w) => { Assert.IsType<Water>(w); },
+                (w) => { Assert.IsType<Water>(w); }
+                );
         }
 
         /// <summary>
@@ -127,82 +79,39 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuFull()
         {
-            List<IOrderItem> test = new List<IOrderItem>
-            {
-                new AngryChicken(),
-                new CowpokeChili(),
-                new DakotaDoubleBurger(),
-                new PecosPulledPork(),
-                new RustlersRibs(),
-                new TexasTripleBurger(),
-                new TrailBurger()
-            };
-
-            test.Add(new BakedBeans());
-            var mBakedBeans = new BakedBeans();
-            mBakedBeans.Size = Size.Medium;
-            test.Add(mBakedBeans);
-            var lBakedBeans = new BakedBeans();
-            lBakedBeans.Size = Size.Large;
-            test.Add(lBakedBeans);
-
-
-            test.Add(new ChiliCheeseFries());
-            var mChilliCheeseFies = new ChiliCheeseFries();
-            mChilliCheeseFies.Size = Size.Medium;
-            test.Add(mChilliCheeseFies);
-            var lChilliCheeseFries = new ChiliCheeseFries();
-            lChilliCheeseFries.Size = Size.Large;
-            test.Add(lChilliCheeseFries);
-
-            test.Add(new CornDodgers());
-            var mCorn = new CornDodgers();
-            mCorn.Size = Size.Medium;
-            test.Add(mCorn);
-            var lCorn = new CornDodgers();
-            lCorn.Size = Size.Large;
-            test.Add(lCorn);
-
-            test.Add(new PanDeCampo());
-            var mPan = new PanDeCampo();
-            mPan.Size = Size.Medium;
-            test.Add(mPan);
-            var lPan = new PanDeCampo();
-            lPan.Size = Size.Large;
-            test.Add(lPan);
-
-            test.Add(new CowboyCoffee());
-            var mCoffee = new CowboyCoffee();
-            mCoffee.Size = Size.Medium;
-            test.Add(mCoffee);
-            var lCoffee = new CowboyCoffee();
-            test.Add(lCoffee);
-
-            test.Add(new JerkedSoda());
-            var mSoda = new JerkedSoda();
-            mSoda.Size = Size.Medium;
-            test.Add(mSoda);
-            var lSoda = new JerkedSoda();
-            lSoda.Size = Size.Large;
-            test.Add(lSoda);
-
-            test.Add(new TexasTea());
-            var mTea = new TexasTea();
-            mTea.Size = Size.Medium;
-            test.Add(mTea);
-            var lTea = new TexasTea();
-            lTea.Size = Size.Large;
-            test.Add(lTea);
-
-            test.Add(new Water());
-            var mWater = new Water();
-            mWater.Size = Size.Medium;
-            test.Add(mWater);
-            var lWater = new Water();
-            lWater.Size = Size.Large;
-            test.Add(lWater);
-
-            Assert.Equal(test.Count(), Menu.CompleteMenu().Count());
+            Assert.Collection(Menu.CompleteMenu(),
+                (ac) => { Assert.IsType<AngryChicken>(ac); },
+                (cc) => { Assert.IsType<CowpokeChili>(cc); },
+                (ddb) => { Assert.IsType<DakotaDoubleBurger>(ddb); },
+                (ppp) => { Assert.IsType<PecosPulledPork>(ppp); },
+                (rr) => { Assert.IsType<RustlersRibs>(rr); },
+                (ttb) => { Assert.IsType<TexasTripleBurger>(ttb); },
+                (tb) => { Assert.IsType<TrailBurger>(tb); },
+                (bb) => { Assert.IsType<BakedBeans>(bb); },
+                (mbb) => { Assert.IsType<BakedBeans>(mbb); },
+                (lbb) => { Assert.IsType<BakedBeans>(lbb); },
+                (ccf) => { Assert.IsType<ChiliCheeseFries>(ccf); },
+                (mccf) => { Assert.IsType<ChiliCheeseFries>(mccf); },
+                (lccf) => { Assert.IsType<ChiliCheeseFries>(lccf); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (cd) => { Assert.IsType<CornDodgers>(cd); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); },
+                (pdc) => { Assert.IsType<PanDeCampo>(pdc); },
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (coffee) => { Assert.IsType<CowboyCoffee>(coffee); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (js) => { Assert.IsType<JerkedSoda>(js); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (tt) => { Assert.IsType<TexasTea>(tt); },
+                (w) => { Assert.IsType<Water>(w); },
+                (w) => { Assert.IsType<Water>(w); },
+                (w) => { Assert.IsType<Water>(w); }
+                );
 
         }
 

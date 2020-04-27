@@ -43,17 +43,17 @@
                 <h4>Calories</h4>
                 <div>
                     Between
-                    <input name="CaloriesMin" type="number" min="0" max="1000" step="10" placeholder="min" />
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="10" placeholder="min" value="@Model.CaloriesMin"/>
                     and
-                    <input name="CaloriesMax" type="number" min="0" max="1000" step="10" placeholder="max" />
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="10" placeholder="max" value="@Model.CaloriesMax"/>
                 </div>
 
                 <h4>Price</h4>
                 <div>
                     Between
-                    <input name="PriceMin" type="number" min="0" max="20" step=".01" placeholder="min" />
+                    <input name="PriceMin" type="number" min="0" max="20" step=".01" placeholder="min" value="@Model.PriceMin"/>
                     and
-                    <input name="PriceMax" type="number" min="0" max="20" step=".01" placeholder="max" />
+                    <input name="PriceMax" type="number" min="0" max="20" step=".01" placeholder="max" value="@Model.PriceMax"/>
                 </div>
             </div>
         </form>

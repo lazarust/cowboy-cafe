@@ -234,6 +234,8 @@ namespace CowboyCafe.Data
         {
             if (min == null & max == null) return items;
 
+            if (items == null) return null;
+
             var results = new List<IOrderItem>();
 
             if (min == null)
@@ -277,6 +279,8 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
             if (min == null & max == null) return items;
+
+            if (items == null) return null;
 
             var results = new List<IOrderItem>();
 
